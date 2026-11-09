@@ -1,23 +1,26 @@
+import type { IMenuItem } from '@/types/menu.types';
+import { Compass, Home, Radio } from 'lucide-react';
 import { PagesConfig } from '../config/pages.config';
 
-export const MENU_ITEMS = [
+export const MENU_ITEMS: IMenuItem[] = [
   {
+    icon: Home,
     name: 'Home',
     link: PagesConfig.HOME,
   },
   {
+    icon: Compass,
     name: 'Discover',
     link: PagesConfig.DISCOVER,
   },
   {
+    icon: Radio,
     name: 'Radio',
     link: PagesConfig.RADIO,
   },
 ];
 
-export type TMenuItem = (typeof MENU_ITEMS)[number];
-
-export const LIBRARY_MENU_ITEMS = [
+export const LIBRARY_MENU_ITEMS: IMenuItem[] = [
   {
     name: 'Made or You',
     link: PagesConfig.MADE_FOR_YOU,
