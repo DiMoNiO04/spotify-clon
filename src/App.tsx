@@ -22,7 +22,7 @@ function App() {
           <button
             className="
               rounded-full bg-gradient-to-r from-[#2F3034] to-[#1F2026] p-5 border border-player-bg 
-              border-solid duration-300 hover:translate-y-[-2px] hover:shadow
+              border-solid duration-300 hover:scale-105
             "
           >
             <Play
