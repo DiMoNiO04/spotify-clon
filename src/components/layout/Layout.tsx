@@ -1,6 +1,6 @@
-import type { PropsWithChildren } from "react";
-import { LeftSidebar } from "./leftSidebar/LeftSidebar";
-import { RightSidebar } from "./rightSidebar/RightSidebar";
+import type { PropsWithChildren } from 'react';
+import { LeftSidebar } from './leftSidebar/LeftSidebar';
+import { RightSidebar } from './rightSidebar/RightSidebar';
 
 export default function Layout({ children }: PropsWithChildren<unknown>) {
   return (

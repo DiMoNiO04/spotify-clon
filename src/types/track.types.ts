@@ -1,4 +1,4 @@
-import type { IArtist } from "./artists.types";
+import type { IArtist } from './artists.types';
 
 export interface ITrack {
   name: string;

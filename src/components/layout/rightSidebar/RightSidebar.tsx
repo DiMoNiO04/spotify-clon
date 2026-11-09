@@ -1,4 +1,4 @@
-import { Lyrics } from "./Lyrics";
+import { Lyrics } from './Lyrics';
 
 export function RightSidebar() {
   return (

@@ -1,5 +1,5 @@
-import { Play } from "lucide-react";
-import styles from "./Lyrics.module.scss";
+import { Play } from 'lucide-react';
+import styles from './Lyrics.module.scss';
 
 export function Lyrics() {
   return (

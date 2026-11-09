@@ -1,5 +1,7 @@
-import { Play } from "lucide-react";
-import { SearchField } from "./components/elements/searchField/SearchField";
+import { Play } from 'lucide-react';
+import { SearchField } from './components/elements/searchField/SearchField';
+import { TrackItem } from './components/elements/trackItem/TrackItem';
+import { TRACKS } from './data/tracks.data';
 
 function App() {
   return (
@@ -29,6 +31,15 @@ function App() {
             />
           </button>
         </div>
+      </div>
+
+      <div>
+        {TRACKS.map((track) => (
+          <TrackItem
+            track={track}
+            key={track.name}
+          />
+        ))}
       </div>
     </div>
   );

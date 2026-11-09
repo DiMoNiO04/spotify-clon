@@ -1,5 +1,5 @@
-import { LIBRARY_MENU_ITEMS, MENU_ITEMS } from "@/data/menu.data";
-import { Menu } from "./Menu";
+import { LIBRARY_MENU_ITEMS, MENU_ITEMS } from '@/data/menu.data';
+import { Menu } from './Menu';
 
 export function LeftSidebar() {
   return (

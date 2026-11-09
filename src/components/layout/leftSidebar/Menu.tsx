@@ -1,4 +1,4 @@
-import type { IMenuItem } from "@/types/menu.types";
+import type { IMenuItem } from '@/types/menu.types';
 
 interface Props {
   items: IMenuItem[];
@@ -10,7 +10,7 @@ export function Menu({ items, title }: Props) {
     <div>
       {title && <div className="mb-5 opacity-60 text-xxs uppercase font-medium">{title}</div>}
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item.name}>
             <a
               className="flex gap-3 items-center mb-5 group"
