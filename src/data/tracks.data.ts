@@ -32,7 +32,7 @@ export const TRACKS: ITrack[] = [
     file: '/audio/Insomnia.mp3',
     cover: '/cover/Insomnia.jpg',
     artist: ARTISTS[3],
-    duration: 180,
+    duration: 137,
   },
   {
     id: 4,
