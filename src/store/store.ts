@@ -1,6 +1,6 @@
 import { TRACKS } from '@/data/tracks.data';
-import type { ITrack } from '@/types/track.types';
 import { makeAutoObservable } from 'mobx';
+import type { ITrack } from './../types/track.types';
 
 class MusicPlayerStore {
   isPlaying: boolean = false;
@@ -13,10 +13,12 @@ class MusicPlayerStore {
     makeAutoObservable(this);
   }
 
-  play(track: ITrack) {
+  setTrack(track: ITrack | null) {
     this.currentTrack = track;
-    this.isPlaying = true;
-    console.log(`Playing track: ${track.name}`);
+  }
+
+  togglePlayPause() {
+    this.isPlaying = !this.isPlaying;
   }
 
   seek(time: number) {
@@ -27,6 +29,21 @@ class MusicPlayerStore {
   setVolume(volume: number) {
     this.volume = volume;
   }
+
+  changeTrack(type: 'prev' | 'next') {
+    if (!this.currentTrack) return;
+
+    const currentIndex = TRACKS.findIndex((track) => track.name === this.currentTrack?.name);
+
+    const newIndex =
+      type === 'prev'
+        ? (currentIndex - 1 + TRACKS.length) % TRACKS.length
+        : (currentIndex + 1) % TRACKS.length;
+
+    this.setTrack(TRACKS[newIndex]);
+    this.currentTime = 0;
+    this.progress = 0;
+  }
 }
 
-export const musicPlayerStore = new MusicPlayerStore();
+export const playerStore = new MusicPlayerStore();
