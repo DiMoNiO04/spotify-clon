@@ -3,7 +3,8 @@ import { favoriteStore } from '@/store/favorite.store';
 import type { ITrack } from '@/types/track.types';
 import { transformDuration } from '@/utils/transform-duration';
 
-import { Ellipsis, Heart } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import { AddToPlaylist } from './AddToPlaylist';
 
 interface Props {
   track: ITrack;
@@ -11,7 +12,7 @@ interface Props {
 
 export function TrackItem({ track }: Props) {
   return (
-    <div className="flex items-center justify-between border-b border-player-bg/70 py-6 last:border-0">
+    <div className="border-b border-player-bg/50 py-7 flex justify-between items-center last:border-0">
       <TrackInfo
         title={track.name}
         subTitle={transformDuration(track.duration)}
@@ -19,26 +20,18 @@ export function TrackItem({ track }: Props) {
         track={track}
       />
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4">
         <button
-          type="button"
-          className="group"
-          aria-label="Like"
           onClick={() => {
             favoriteStore.toggleFavorite(track.id);
           }}
         >
           <Heart
+            className="text-primary opacity-85 duration-300 hover:opacity-100"
             fill={favoriteStore.favorites.includes(track.id) ? 'var(--color-primary)' : 'none'}
-            className="text-primary opacity-80 duration-300 hover:opacity-100 "
           />
         </button>
-        <button
-          type="button"
-          aria-label="More options"
-        >
-          <Ellipsis className="opacity-30 duration-300 hover:opacity-100" />
-        </button>
+        <AddToPlaylist track={track} />
       </div>
     </div>
   );

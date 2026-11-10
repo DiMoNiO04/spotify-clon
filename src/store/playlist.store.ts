@@ -1,7 +1,7 @@
-import { makeAutoObservable } from 'mobx/src/internal.js';
+import { makeAutoObservable } from 'mobx';
 
 class PlaylistStore {
-  playlists: { name: string; tracks: number[] }[] = JSON.parse(
+  playlists: { name: string; tracks: string[] }[] = JSON.parse(
     localStorage.getItem('playlists') || '[]',
   );
 
@@ -9,7 +9,7 @@ class PlaylistStore {
     makeAutoObservable(this);
   }
 
-  private saveToLocaleStorage() {
+  private saveToLocalStorage() {
     localStorage.setItem('playlists', JSON.stringify(this.playlists));
   }
 
@@ -17,23 +17,25 @@ class PlaylistStore {
     if (this.playlists.find((playlist) => playlist.name === name)) return;
     this.playlists.push({ name, tracks: [] });
 
-    this.saveToLocaleStorage();
+    this.saveToLocalStorage();
   }
 
-  addToPlaylist(playlistName: string, trackId: number) {
-    const playlist = this.playlists.find((p) => p.name === playlistName);
-    if (!playlist || playlist.tracks.includes(trackId)) return;
-    playlist.tracks.push(trackId);
-
-    this.saveToLocaleStorage();
-  }
-
-  removeFromPlaylist(playlistName: string, trackId: number) {
+  toggleTrackInPlaylist(playlistName: string, trackName: string) {
     const playlist = this.playlists.find((p) => p.name === playlistName);
     if (!playlist) return;
-    playlist.tracks = playlist.tracks.filter((id) => id !== trackId);
+    if (playlist.tracks.includes(trackName)) {
+      playlist.tracks = playlist.tracks.filter((name) => name !== trackName);
+    } else {
+      playlist.tracks.push(trackName);
+    }
 
-    this.saveToLocaleStorage();
+    this.saveToLocalStorage();
+  }
+
+  isTrackInPlaylist(playlistName: string, trackName: string) {
+    const playlist = this.playlists.find((p) => p.name === playlistName);
+    if (!playlist) return false;
+    return playlist.tracks.includes(trackName);
   }
 }
 
