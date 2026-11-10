@@ -1,11 +1,11 @@
 import { TRACKS } from '@/data/tracks.data';
+import type { ITrack } from '@/types/track.types';
 import { makeAutoObservable } from 'mobx';
-import type { ITrack } from './../types/track.types';
 
 class MusicPlayerStore {
   isPlaying: boolean = false;
-  currentTrack: ITrack | null = TRACKS[1];
-  volume: number = 80;
+  currentTrack: ITrack | null = TRACKS[0];
+  volume: number = 85;
   currentTime: number = 0;
   progress: number = 0;
 
@@ -19,6 +19,14 @@ class MusicPlayerStore {
 
   togglePlayPause() {
     this.isPlaying = !this.isPlaying;
+  }
+
+  play() {
+    this.isPlaying = true;
+  }
+
+  pause() {
+    this.isPlaying = false;
   }
 
   seek(time: number) {
@@ -35,12 +43,12 @@ class MusicPlayerStore {
 
     const currentIndex = TRACKS.findIndex((track) => track.name === this.currentTrack?.name);
 
-    const newIndex =
-      type === 'prev'
-        ? (currentIndex - 1 + TRACKS.length) % TRACKS.length
-        : (currentIndex + 1) % TRACKS.length;
+    const nextIndex =
+      type === 'next'
+        ? (currentIndex + 1) % TRACKS.length
+        : (currentIndex - 1 + TRACKS.length) % TRACKS.length;
+    this.setTrack(TRACKS[nextIndex]);
 
-    this.setTrack(TRACKS[newIndex]);
     this.currentTime = 0;
     this.progress = 0;
   }

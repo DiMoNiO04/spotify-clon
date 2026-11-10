@@ -14,7 +14,7 @@ export function AudioPlayer() {
       <TrackInfo
         title={playerStore.currentTrack?.name}
         subTitle={playerStore.currentTrack?.artist.name}
-        image={undefined}
+        image={playerStore.currentTrack.cover}
       />
 
       <audio

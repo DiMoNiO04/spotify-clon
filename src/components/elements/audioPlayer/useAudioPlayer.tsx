@@ -1,8 +1,19 @@
 import { playerStore } from '@/store/store';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const useAudioPlayer = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    if (playerStore.isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [playerStore.isPlaying]);
 
   const togglePlayPause = () => {
     if (!audioRef.current) return;
