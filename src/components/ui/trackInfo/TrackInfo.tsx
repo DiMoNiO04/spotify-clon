@@ -1,4 +1,4 @@
-import { playerStore } from '@/store/store';
+import { playerStore } from '@/store/player.store';
 import type { ITrack } from '@/types/track.types';
 import cn from 'clsx';
 import { Pause, Play } from 'lucide-react';

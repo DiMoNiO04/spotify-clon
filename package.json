@@ -17,6 +17,7 @@
     "mobx": "^7.1.4",
     "mobx-react-lite": "^5.1.2",
     "mobx-react-observer": "^2.0.0",
+    "nuqs": "^2.10.2",
     "react": "^19.3.1",
     "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.3.1",

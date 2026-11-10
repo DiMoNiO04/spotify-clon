@@ -3,6 +3,7 @@ import { ARTISTS } from './artists.data';
 
 export const TRACKS: ITrack[] = [
   {
+    id: 0,
     name: '90s Bitch',
     file: '/audio/90s_Bitch.mp3',
     cover: '/cover/90s_Bitch.jpg',
@@ -10,6 +11,7 @@ export const TRACKS: ITrack[] = [
     duration: 196,
   },
   {
+    id: 1,
     name: 'Emergency',
     file: '/audio/Emergency.mp3',
     cover: '/cover/Emergency.jpg',
@@ -17,6 +19,7 @@ export const TRACKS: ITrack[] = [
     duration: 227,
   },
   {
+    id: 2,
     name: 'Free Yourself',
     file: '/audio/Free_Yourself.mp3',
     cover: '/cover/Free_Yourself.jpg',
@@ -24,6 +27,7 @@ export const TRACKS: ITrack[] = [
     duration: 339,
   },
   {
+    id: 3,
     name: 'Insomnia',
     file: '/audio/Insomnia.mp3',
     cover: '/cover/Insomnia.jpg',
@@ -31,6 +35,7 @@ export const TRACKS: ITrack[] = [
     duration: 180,
   },
   {
+    id: 4,
     name: 'Konje',
     file: '/audio/Konje.mp3',
     cover: '/cover/Konje.jpg',
@@ -38,6 +43,7 @@ export const TRACKS: ITrack[] = [
     duration: 181,
   },
   {
+    id: 5,
     name: 'Oldskool Sound',
     file: '/audio/Oldskool_Sound.mp3',
     cover: '/cover/Oldskool_Sound.jpg',
@@ -45,6 +51,7 @@ export const TRACKS: ITrack[] = [
     duration: 216,
   },
   {
+    id: 6,
     name: 'Open Sesame (Abracadabra) [feat. Leila K]',
     file: '/audio/Open_Sesame__Abracadabra___feat._Leila_K_.mp3',
     cover: '/cover/Open_Sesame__Abracadabra___feat._Leila_K_.jpg',
@@ -52,6 +59,7 @@ export const TRACKS: ITrack[] = [
     duration: 220,
   },
   {
+    id: 7,
     name: 'Pianoo',
     file: '/audio/Pjanoo.mp3',
     cover: '/cover/Pjanoo.jpg',
@@ -59,6 +67,7 @@ export const TRACKS: ITrack[] = [
     duration: 180,
   },
   {
+    id: 8,
     name: 'Sex Drugs Energie (Stan Christ & Zeltak Remix)',
     file: '/audio/Sex_Drugs_Energie__Stan_Christ___Zeltak_Remix_.mp3',
     cover: '/cover/Sex_Drugs_Energie__Stan_Christ___Zeltak_Remix_.jpg',
@@ -66,6 +75,7 @@ export const TRACKS: ITrack[] = [
     duration: 229,
   },
   {
+    id: 9,
     name: 'Sexy Chick',
     file: '/audio/Sexy_Chick.mp3',
     cover: '/cover/Sexy_Chick.jpg',
@@ -73,6 +83,7 @@ export const TRACKS: ITrack[] = [
     duration: 168,
   },
   {
+    id: 10,
     name: 'SUBMARINE',
     file: '/audio/SUBMARINE.mp3',
     cover: '/cover/SUBMARINE.jpg',
@@ -80,6 +91,7 @@ export const TRACKS: ITrack[] = [
     duration: 317,
   },
   {
+    id: 11,
     name: 'Take Me Higher',
     file: '/audio/Take_Me_Higher.mp3',
     cover: '/cover/Take_Me_Higher.jpg',
@@ -87,6 +99,7 @@ export const TRACKS: ITrack[] = [
     duration: 300,
   },
   {
+    id: 12,
     name: 'The Violator',
     file: '/audio/The_Violator.mp3',
     cover: '/cover/The_Violator.jpg',
@@ -94,6 +107,7 @@ export const TRACKS: ITrack[] = [
     duration: 241,
   },
   {
+    id: 13,
     name: 'We Are The People - southstar Remix (1)',
     file: '/audio/We_Are_The_People_-_southstar_Remix__1_.mp3',
     cover: '/cover/We_Are_The_People_-_southstar_Remix__1_.jpg',
@@ -101,6 +115,7 @@ export const TRACKS: ITrack[] = [
     duration: 236,
   },
   {
+    id: 14,
     name: 'When I Push - Edit',
     file: '/audio/When_I_Push_-_Edit.mp3',
     cover: '/cover/When_I_Push_-_Edit.jpg',

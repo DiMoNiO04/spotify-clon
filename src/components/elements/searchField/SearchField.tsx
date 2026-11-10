@@ -1,6 +1,12 @@
 import { Search } from 'lucide-react';
+import type { ChangeEvent } from 'react';
 
-export function SearchField() {
+interface Props {
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export function SearchField({ value, onChange }: Props) {
   return (
     <div>
       <label className="flex items-center gap-3 group">
@@ -9,6 +15,8 @@ export function SearchField() {
           type="search"
           placeholder="Search for songs, artists, etc..."
           className="bg-transparent w-full"
+          value={value}
+          onChange={onChange}
         />
       </label>
     </div>

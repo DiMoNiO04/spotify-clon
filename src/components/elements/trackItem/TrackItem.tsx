@@ -1,4 +1,5 @@
 import { TrackInfo } from '@/components/ui/trackInfo/TrackInfo';
+import { favoriteStore } from '@/store/favorite.store';
 import type { ITrack } from '@/types/track.types';
 import { transformDuration } from '@/utils/transform-duration';
 
@@ -23,8 +24,14 @@ export function TrackItem({ track }: Props) {
           type="button"
           className="group"
           aria-label="Like"
+          onClick={() => {
+            favoriteStore.toggleFavorite(track.id);
+          }}
         >
-          <Heart className="text-primary opacity-80 duration-300 hover:opacity-100 " />
+          <Heart
+            fill={favoriteStore.favorites.includes(track.id) ? 'var(--color-primary)' : 'none'}
+            className="text-primary opacity-80 duration-300 hover:opacity-100 "
+          />
         </button>
         <button
           type="button"

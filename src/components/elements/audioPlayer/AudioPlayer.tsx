@@ -1,6 +1,6 @@
 import { ProgressBar } from '@/components/ui/progressBar/ProgressBar';
 import { TrackInfo } from '@/components/ui/trackInfo/TrackInfo';
-import { playerStore } from '@/store/store';
+import { playerStore } from '@/store/player.store';
 import { Pause, Play, SkipBack, SkipForward, Volume, Volume1, Volume2 } from 'lucide-react';
 import { useAudioPlayer } from './useAudioPlayer';
 
